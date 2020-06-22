@@ -45,5 +45,5 @@ class CClock implements ClockInterface{
   }
 }
 
-let d = createClock(DClock,12,12);
-let t = createClock(CClock,12,12);
+let d:ClockInterface = createClock(DClock,12,12);
+let t:ClockInterface = createClock(CClock,12,12);
