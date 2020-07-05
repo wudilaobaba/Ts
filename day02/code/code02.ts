@@ -51,6 +51,7 @@ function wuxian():never{
 
 
 //object类型  object不可以使用基本类型代替
+//object类型包含了：大括号包含的对象、中括号包含的数组、null、undefined 。
 declare function create(o:object|null):void;
 create({prop:1});
 create(null);

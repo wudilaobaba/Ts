@@ -18,13 +18,23 @@ interface Whj {
 let w:Whj = {
   suits:['黑桃','红桃','草花','方块'],
   cards:Array(52),
-  xx(){
-    return (): Card=>{ //箭头函数可以保留this
-      let picked:number = 50;
-      let hua:number = 1;
-      let card:Card = new Card(this.suits[hua],picked%13);
-      card.result();
-      return card;
+  // xx(){
+  //   return (): Card=>{ //箭头函数可以保留this
+  //     let picked:number = 50;
+  //     let hua:number = 1;
+  //     let card:Card = new Card(this.suits[hua],picked%13);
+  //     card.result();
+  //     return card;
+  //   }
+  // }
+  // xx:()=>{
+  //   return():Card =>{
+  //     return new Card("",0);
+  //   }
+  // }
+  xx():()=>Card { //正规写法
+    return ():Card=>{
+      return new Card("",0);
     }
   }
 };

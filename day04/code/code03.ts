@@ -21,11 +21,10 @@ arr = ro as number[];
 interface Xx {
   name:string;
   age:number;
-  [propName: string]: any; //该属性是接口的扩展属性，允许实例化的时候传入其他值为string的其他属性
-          //key类型   //value类型
+  [propName: string]: any; //该属性是接口的扩展属性,扩展属性的值可以是任意类型，就这样写死！！！！
 }
 let qqq:Xx ={
   name:"name",
   age:1,
-  sex:"man"
+  sex:[]
 };

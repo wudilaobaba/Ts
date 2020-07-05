@@ -9,11 +9,12 @@ code07  接口继承类
 
 重点：ts语法中冒号后面全是描述冒号前面的东西！！！！！！！！！！！！！！
 
-接口中定义方法(函数)的两种形式：
+接口中定义方法(函数)的两种形式：建议不要写function关键字了 fun.ts
 01.fun(a:number,b:number):boolean;
   实例：fun(a:number,b:number){return false;}
 02.fun:(a:number,b:number)=>boolean;
   实例：fun:(a:number,b:number)=>{return false;}
+03.xx():()=>Card;//xx这个函数，返回的是函数类型，最终返回Card类型
 
 
 接口定义方法：
