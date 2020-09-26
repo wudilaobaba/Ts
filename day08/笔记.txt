@@ -10,3 +10,5 @@ npm test 单元测试
 
 这样的类型：
 export type Method = 'get'|'GET'|'delete'|'DELETE'|'head'|'HEAD'|'options'|'OPTIONS'|'post'|'POST'|'put'|'PUT'|'patch'|'PATCH';
+
+Object.prototype.toString.call(val) === '[Object Date]';//判断是不是Date类型
