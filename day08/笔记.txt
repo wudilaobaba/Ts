@@ -1,0 +1,12 @@
+TS脚手架工具：TypeScript library starter
+  使用：
+    git clone https://github.com/alexjoverm/typescript-library-starter.git ts-axios
+    cd ts-axios
+    npm install
+
+npm start 打包
+npm run lint 代码预发检测
+npm test 单元测试
+
+这样的类型：
+export type Method = 'get'|'GET'|'delete'|'DELETE'|'head'|'HEAD'|'options'|'OPTIONS'|'post'|'POST'|'put'|'PUT'|'patch'|'PATCH';
