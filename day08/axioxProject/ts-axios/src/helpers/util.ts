@@ -5,7 +5,7 @@ const toString = Object.prototype.toString;
  * @param val
  */
 export function isDate(val:any):val is Date {//类型保护
-  return toString.call(val) === '[Object Date]';//判断是不是Date类型
+  return toString.call(val) === '[object Date]';//判断是不是Date类型
 }
 
 /**
