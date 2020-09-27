@@ -1,6 +1,0 @@
-函数
-code02.ts this的使用
-
-code03.ts 回调函数的定义  this的使用
-
-code04.ts 函数的重载
