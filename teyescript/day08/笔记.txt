@@ -1,0 +1,22 @@
+
+TS脚手架工具：TypeScript library starter
+  使用：
+    git clone https://github.com/alexjoverm/typescript-library-starter.git ts-axios
+    cd ts-axios
+    npm install
+    src目录下建一个与自己重命名一致的.ts文件作为入口文件
+
+npm start 打包
+npm run lint 代码预发检测
+npm test 单元测试
+
+这样的类型：
+export type Method = 'get'|'GET'|'delete'|'DELETE'|'head'|'HEAD'|'options'|'OPTIONS'|'post'|'POST'|'put'|'PUT'|'patch'|'PATCH';
+
+Object.prototype.toString.call(val) === '[Object Date]';//判断是不是Date类型
+
+
+ajax原生写法：
+  let xmlHttpRequest = new XMLHttpRequest();
+  request.open(method.toUpperCase(),url,true);
+  request.send(data);//body体中的数据

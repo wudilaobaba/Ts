@@ -1,0 +1,90 @@
+1.判断特殊类型的方法：
+  undefined类型：
+    typeof val === 'undefined'
+
+  对象类型：
+    export function isObject(val:any):val is Object {//类型保护
+      return val !== null && typeof val === 'object';
+    };
+
+  日期类型：
+    export function isDate(val:any):val is Date {//类型保护
+      return Object.prototype.toString.call(val) === '[object Date]';//判断是不是Date类型
+    }
+
+  数组类型：
+    Array.isArray(val)
+
+  判断是不是JSON格式的对象,不是数组对象！！！
+    export function isPlainObject(val:any):val is Object {
+      return Object.prototype.toString.call(val) === "[object Object]";
+    }
+  判断是不是JSON格式的对象,包含数组对象！！！
+    export function isJSONObj(val:any):val is Object {
+      return Object.prototype.toString.call(val) === "[object Object]" || Object.prototype.toString.call(val) === "[object Array]";
+    }
+
+  判断数据是不是表单格式的body体数据
+    export function isURLSearchParams(val:any):val is URLSearchParams{
+      return Object.prototype.toString.call(val) === "[object URLSearchParams]";
+    }
+
+2.遍历对象中的键值对：
+    let obj = {
+      name:"xxx",
+      age:12,
+      sex:"男"
+    };
+    let key = Object.keys(obj);
+    let value = Object.values(obj);
+    let key_value = Object.entries(obj);
+    console.log(key);
+    console.log(value);
+    console.log(key_value);
+
+3.ajax相关知识
+  ajax原生js代码：
+    const request = new XMLHttpRequest();
+    request.open(method.toUpperCase(),url,true);
+    Object.keys(headers).forEach((name)=>{
+      if(data === null && name.toLocaleLowerCase() === "content-type"){
+        /*body体中无数据情况下，干掉header中的content-type属性*/
+        delete headers[name];
+      }else{
+        request.setRequestHeader(name,headers[name]);
+      }
+    });
+    request.send(data);/*body体中的数据 如果data是json格式，那么传json字符串*/
+  headers的一般都是这样的数据：
+    其中最重要的就是Content-Type
+    Content-Type与body体中的数据格式一一对应，如果body体中没有数据，则干掉Content-Type属性
+       "Content-type": "application/json;charset=utf-8"
+       "Content-type": "application/x-www-form-urlencoded;charset=utf-8"
+       "Content-type": "text/plain;charset=utf-8"
+       "Content-type": "text/html;charset=utf-8"
+       "Content-type": "application/javascript;charset=utf-8"
+       "Content-type": "application/xml;charset=utf-8"
+       "Content-type": "text/xml;charset=utf-8"
+    {
+      Cookie', 'mycookie=cookie'
+      Accept-Encoding: gzip, deflate, br
+      Accept-Language: zh-CN,zh;q=0.9
+      Connection: keep-alive
+      Content-Length: 5
+      Content-Type: text/plain;charset=UTF-8
+      Host: localhost:8599
+      Origin: http://localhost:3000
+      Referer: http://localhost:3000/
+      Sec-Fetch-Dest: empty
+      Sec-Fetch-Mode: cors
+      Sec-Fetch-Site: same-site
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36
+    }
+
+4.Promise在ts中的用法：见:promise在ts中的用法/promise.ts
+5.创建空对象：let parsed = Object.create(null);
+6.let assign = Object.assign(undefined || {name:"dd"},{name:"d"}); //将assign方法中的对象参数进行合并，不确定是否为对象就用或表示
+7.获取一个类实例的所有属性和方法：
+  for (const key in axios){
+    console.log(key);
+  }

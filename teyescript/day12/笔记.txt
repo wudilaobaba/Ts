@@ -1,0 +1,16 @@
+异常处理
+  链接超时、
+  状态码异常(前端参数传错了)、
+  Network Error(服务器关闭了)
+
+异常处理的增强
+  增加AxiosError接口
+
+
+typescript项目就要用ts版的插件(也就是自己开发的源码)
+  但是要将需要使用方用到的对象或方法进行导出,建一个index.ts文件，然后导出所有需要的：
+    import {axios} from "./whj-asioss";
+    export * from "./types/index";
+    export default axios;
+js项目就要用ts项目打包以后的js插件
+  用生成的js插件即可

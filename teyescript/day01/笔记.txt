@@ -1,0 +1,6 @@
+全局安装TS
+sudo npm i -g typescript
+tsc -v 出现版本号，说明typescript安装完成
+
+命令行运行.ts文件：进入.ts文件的目录中，执行 tsc code01.ts
+
