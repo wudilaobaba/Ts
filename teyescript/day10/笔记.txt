@@ -1,5 +1,0 @@
-﻿处理请求返回值
-让xhr函数返回Promise类型
-export interface AxiosPromise extends Promise<AxiosResponse>{
-
-}

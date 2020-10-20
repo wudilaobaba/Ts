@@ -1,2 +1,0 @@
-code03 变量的声明  var
-code04 变量的声明  let 和 const
